@@ -3,6 +3,7 @@
 
 resource "aws_subnet" "user30-subnet1" {
   vpc_id            = aws_vpc.user30-vpc.id
+  # AZ 는 AWS Management Console -> VPC -> VPC 대시보드 -> 설정에서도 확인 가능
   availability_zone = "ap-southeast-1a"
   cidr_block        = "30.0.1.0/24"
 
