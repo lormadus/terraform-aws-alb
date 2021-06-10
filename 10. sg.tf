@@ -9,7 +9,8 @@ resource "aws_security_group" "user30-sg" {
     to_port     = 22
     protocol    = "tcp"
     # 보안을 위해서 22번 포트로의 접속은 사무실, 혹은 집에서만 가능하도록 수정 필요
-    cidr_blocks = ["0.0.0.0/0"]
+    # 아래는 OO 사무실 IP
+    cidr_blocks = ["211.**.**.5/32"]
   }
 
   ingress {
