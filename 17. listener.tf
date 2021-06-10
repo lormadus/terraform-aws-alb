@@ -1,3 +1,4 @@
+# 부하 분산을 위해 외부에서 들어오는 포트 지정 및 해당 트래픽을 처리할 대상그룹(Target Group)설정
 resource "aws_alb_listener" "http" {
   load_balancer_arn	= aws_alb.user30-alb.arn
   port              	= "80"
