@@ -1,7 +1,9 @@
+# 부하 분산을 위해 Application Load Balancer 생성 
 resource "aws_alb" "user30-alb" {
   name            = "user30-alb"
   internal        = false
   security_groups = [aws_security_group.user30-alb-sg.id]
+  # 가용성을 위해 복수의 서브넷 지정 필요
   subnets         = [
     aws_subnet.user30-subnet1.id,
     aws_subnet.user30-subnet2.id
