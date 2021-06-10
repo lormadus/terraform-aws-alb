@@ -1,3 +1,4 @@
+# 부하 분산을 위해 두번째 EC2 인스턴스는 첫번째와 다른 가용영역 및 서브넷에 생성
 resource "aws_instance" "user30-web2" {
   ami               	= var.amazon_linux
   availability_zone 	= "ap-southeast-1b"
