@@ -1,3 +1,4 @@
+# EC2 인스턴스에 개별적으로 적용할 보안그룹(SG)
 resource "aws_security_group" "user30-sg" {
   name        = "user30-sg"
   description = "open ssh port for bastion"
@@ -7,6 +8,7 @@ resource "aws_security_group" "user30-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
+    # 보안을 위해서 22번 포트로의 접속은 사무실, 혹은 집에서만 가능하도록 수정 필요
     cidr_blocks = ["0.0.0.0/0"]
   }
 
