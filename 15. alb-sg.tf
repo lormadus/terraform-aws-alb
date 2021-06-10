@@ -1,3 +1,4 @@
+# ALB에 적용한 보안그룹 생성
 resource "aws_security_group" "user30-alb-sg" {
   name        = "user30-alb-sg"
   description = "open HTTP port for ALB"
