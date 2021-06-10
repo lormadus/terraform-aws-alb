@@ -1,6 +1,8 @@
+# EC2 인스턴스 생성 
 resource "aws_instance" "user30-web1" {
   ami               	= var.amazon_linux
   availability_zone 	= "ap-southeast-1a"
+  # 리전마다 지원되는 인스턴스 타입이 다르기 때문에 미리 확인 필요
   instance_type     	= "t2.nano"
   key_name          	= var.dev_keyname
   vpc_security_group_ids = [
