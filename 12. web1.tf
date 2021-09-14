@@ -23,8 +23,11 @@ yum install httpd -y
 ## AWS CodeDeploy 사용하는 경우 Agent 설치 .  아래 eu-west-3 부분 각 Region Code로 수정 필요
 ##예) wget https://aws-codedeploy-eu-west-3.s3.amazonaws.com/latest/codedeploy-agent.noarch.rpm
 wget https://aws-codedeploy-리전코드.s3.amazonaws.com/latest/codedeploy-agent.noarch.rpm
-yum -y install codedeploy-agent.noarch.rpm  
-  
+yum install ruby -y
+yum -y install codedeploy-agent.noarch.rpm
+service codedeploy-agent start
+
+## CodeDeploy 통해 배포하시는 경우 아래 index.html 생성은 생략  
 echo "<html>" > /var/www/html/index.html   ## 리다이렉션 반드시 한개로
 echo "Hello World from $(hostname -f)" >> /var/www/html/index.html
 echo "<img src=\"https://CloudFront적용된 이미지 경로\">" >> /var/www/html/index.html
