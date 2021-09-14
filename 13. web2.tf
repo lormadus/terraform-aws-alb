@@ -26,7 +26,6 @@ yum install ruby -y
 yum -y install codedeploy-agent.noarch.rpm
 service codedeploy-agent start
   
-  
 ## CodeDeploy 통해 배포하시는 경우 아래 index.html 생성은 생략  
 echo "<html>" > /var/www/html/index.html   ## 리다이렉션 반드시 한개로
 echo "Hello World from $(hostname -f)" >> /var/www/html/index.html
